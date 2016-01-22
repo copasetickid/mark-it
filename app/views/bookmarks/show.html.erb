@@ -10,5 +10,10 @@
         <i class="fa fa-external-link"></i>
       <% end %>
     </h1>
+
+    <% if @bookmark.tags.any? %>
+      <%= render @bookmark.tags %>
+    <% end %>
+
   </div>
 </div>
