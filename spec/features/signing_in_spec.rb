@@ -13,5 +13,7 @@ RSpec.feature "Users can sign in" do
 
     expect(page).to have_content "Signed in successfully."
     expect(page).to have_content "Signed in as #{user.email}"
+
+    expect(page).to have_content "Your BookMarks"
   end
 end
