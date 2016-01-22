@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
   before_action :authenticate_user!
-  before_action :bookmark_lookup, only: [:edit, :show, :update]
+  before_action :bookmark_lookup, only: [:edit, :show, :update, :destroy]
 
 
   def index
@@ -40,6 +40,13 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def destroy
+    @bookmark.destroy
+    flash[:notice] = "Bookmark has been deleted."
+
+    redirect_to bookmarks_path
+  end
+  
   private
 
   def bookmark_params

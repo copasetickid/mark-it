@@ -52,6 +52,8 @@ RSpec.describe BookmarksController, type: :controller do
         expect(assigns(:bookmark)).to eq news_site
       end
 
+      
+
     end
   end
 
@@ -87,8 +89,8 @@ RSpec.describe BookmarksController, type: :controller do
   end
 
   describe "PUT #update" do 
-
     let(:existing_bookmark) { create(:bookmark, user: user) }
+
     context "logged in users" do 
       before do 
         sign_in user 
@@ -105,6 +107,22 @@ RSpec.describe BookmarksController, type: :controller do
         patch :update, bookmark: { title: "" }, id: existing_bookmark.id
         expect(flash[:alert]).to eq "Bookmark has not been updated."
         should render_template "edit"
+      end
+    end
+  end
+
+  describe "DELETE #destroy" do 
+    let(:existing_bookmark) { create(:bookmark, user: user) }
+
+    context "logged in users" do 
+      before do 
+        sign_in user
+      end
+
+      it "allows them to delete a bookmark" do
+        delete :destroy, id: existing_bookmark.id 
+        expect(flash[:notice]).to eq "Bookmark has been deleted."
+        should redirect_to bookmarks_path
       end
     end
   end
