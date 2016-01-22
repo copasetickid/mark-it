@@ -8,6 +8,7 @@
 /.bundle
 
 *.rbc
+*.DS_Store
 capybara-*.html
 .rspec
 /log
