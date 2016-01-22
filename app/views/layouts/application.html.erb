@@ -7,8 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-	<%= yield %>
+	<%= render 'shared/nav' %>
+  <div class="main">
+    <% flash.each do |key, message| %>
+     <div class="alert alert-<%= key %>">
+        <%= message %>
+      </div>
+    <% end %>
+    <%= yield %>
+  </div>
 </body>
 </html>

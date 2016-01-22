@@ -1,0 +1,30 @@
+.btn-white {
+	background-color: $white;
+	color: $black;
+
+	&:hover {
+		background-color: #dadada;
+		border: 1px solid #cdcdcd;
+		color: $white;
+	}
+}
+
+a.new {
+  @extend .btn-success;
+}
+
+a.edit {
+  @extend .btn-primary;
+}
+
+a.delete {
+  @extend .btn-danger;
+}
+
+a.new, a.edit, a.delete {
+  @extend .btn;
+
+  &:before {
+    padding-right: 0.5em;
+  }
+}
