@@ -1,0 +1,17 @@
+<%= simple_form_for(bookmark) do |f| %>
+  <% if bookmark.errors.any? %>
+   <div id="error_explanation">
+     <h2><%= pluralize(pro bookmark.errors.count, "error") %>
+     prohibited this bookmarkt from being saved:</h2>
+     <ul>
+       <% bookmark.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+       <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  <%= f.input :title, placeholder: "Google" %>
+  <%= f.input  :uri, as: :url, label: "Url", placeholder: "www.google.com" %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

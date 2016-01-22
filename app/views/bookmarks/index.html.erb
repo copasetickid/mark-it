@@ -1,18 +1,27 @@
-<header>
-  <h1>Your BookMarks</h1>
-</header>
-
-<ul class="actions">
-  <li>
-    <%= link_to new_bookmark_path, class: "new" do %>
-      <i class="fa fa-plus"></i> Add
-    <% end %>
-  </li>
-</ul>
-
-
-<div id="bookmarks">
-  <% @bookmarks.each do |bookmark| %>
-    <h2><%= link_to bookmark.title, bookmark %></h2>
-  <% end %>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <header>
+      <h1>Your BookMarks</h1>
+      <ul class="actions">
+        <li>
+          <%= link_to new_bookmark_path, class: "new" do %>
+            <i class="fa fa-plus"></i> Add
+          <% end %>
+        </li>
+      </ul>
+    </header>
+  </div>
 </div>
+
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <div id="bookmarks">
+      <% @bookmarks.each do |bookmark| %>
+      <h2><%= link_to bookmark.title, bookmark %></h2>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

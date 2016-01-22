@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+
+    <h1><%= @bookmark.title %>
+      <%= link_to edit_bookmark_path(@bookmark), class: "edit" do %>
+        <i class="fa fa-pencil"></i>
+      <% end %>
+
+      <%= link_to @bookmark.uri, class: "new", target: "_blank" do %>
+        <i class="fa fa-external-link"></i>
+      <% end %>
+    </h1>
+  </div>
+</div>
