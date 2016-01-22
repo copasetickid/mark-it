@@ -5,18 +5,22 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
-# Use SCSS for stylesheets
+
+#Front-end gems
 gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'font-awesome-sass'
+gem 'jquery-rails'
+gem 'simple_form'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'jquery-rails'
 gem  'devise', '~> 3.5.4'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -42,7 +46,7 @@ group :development do
   gem 'guard-rspec', require: false
 end
 
-group :test do 
+group :test do
   gem 'capybara', '~> 2.5'
   gem "capybara-webkit"
   gem "factory_girl_rails", "~> 4.5"
