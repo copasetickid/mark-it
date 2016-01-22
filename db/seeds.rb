@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+unless User.exists?(email: "admin@markit.com")
+  User.create!(email: "admin@markit.com", password: "password")
+end
+
+Bookmark.create!(title: "Google", uri: "https://www.google.com", user: User.first)
