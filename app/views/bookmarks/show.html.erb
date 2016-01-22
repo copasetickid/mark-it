@@ -7,7 +7,7 @@
             <%= @bookmark.title %>
            </h2>
 
-            <%= link_to edit_bookmark_path(@bookmark), class: "edit" do %>
+            <%= link_to edit_bookmark_path(@bookmark), class: "edit", title: @bookmark.title  do %>
               <i class="fa fa-pencil"></i>
               <% end %>
 

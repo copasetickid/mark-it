@@ -1,6 +1,10 @@
-<div class="page-header">
-  <h1>Edit Bookmark
-      <small><%= @bookmark.title %></small>
-  </h1>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <header>
+    	<h1 class="white-text">Edit
+			<small class="orange-text"><%= @bookmark.title %></small>
+		</h1>
+	</header>
+    <%= render "form", bookmark: @bookmark %>
+  </div>
 </div>
-<%= render "form", bookmark: @bookmark %>
