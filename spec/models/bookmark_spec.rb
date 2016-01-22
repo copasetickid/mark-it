@@ -9,5 +9,7 @@ RSpec.describe Bookmark, type: :model do
 
   describe "associations / relationships" do
     it { should belong_to :user }
+    it { should have_many :taggings }
+    it { should have_many(:tags).through(:taggings) }
   end
 end
