@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
   before_action :authenticate_user!
-  before_action :project_lookup, only: [:edit, :show, :update]
+  before_action :bookmark_lookup, only: [:edit, :show, :update]
 
 
   def index
@@ -13,6 +13,7 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
+    @bookmark.user = current_user
 
     if @bookmark.save
       flash[:notice] = "Bookmark has been created."
@@ -42,10 +43,10 @@ class BookmarksController < ApplicationController
   private
 
   def bookmark_params
-    params.require(:bookmark).permit(:title, :uri)
+    params.require(:bookmark).permit(:title, :uri, :tag_names)
   end
 
-  def project_lookup
+  def bookmark_lookup
     @bookmark = Bookmark.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     flash[:alert] = "The bookmark you were looking for could not be found."
